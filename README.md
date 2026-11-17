@@ -94,3 +94,7 @@ See [TESTS.md](TESTS.md) for the checklist and what was verified by hand (local 
 ## Note
 
 Flowdeck stores everything in your browser's `localStorage`. The sample flows and sample result are demo data — delete them with **Delete everything** or replace them with your own flows. No data is sent to any server.
+
+## Verified with Kane
+
+Local Kane CLI run, 18 Nov 2026: **3/3 tests passed** (smoke-load, draft-from-description, import-results), execution `ffed4953`, 262.56s. Recordings in `tests/output-*/` are committed so CI replays them. Run locally with `NO_PROXY=127.0.0.1,localhost` (the VM egress proxy breaks the agent's local Chrome CDP calls otherwise) and `--override-start-url http://localhost/` while serving the app on port 80.

@@ -1,0 +1,34 @@
+{
+  "commit_id": "f2ebd0be-db8e-4d9d-8bbb-ffd5aa8b4bd4",
+  "test_id": "ec64f1c5-3a09-456e-a55c-02b74b00ee14",
+  "testcase_id": "01M7N6R9AC688T0D7X26Z439TV",
+  "project_id": "01M7N5E3MKKSGYH0FRYT6MT2B9",
+  "folder_id": "01M7N5E4DRPYKRYPRG3TCVM5ZV",
+  "org_id": "3436696",
+  "session_name": "smoke-load",
+  "executions": [
+    {
+      "execution_id": "683452df-8f9b-4c7d-9dc2-551d98fea556",
+      "run_kind": "author",
+      "status": "passed",
+      "valid": true,
+      "uploaded": true,
+      "at": "2026-11-17T17:02:52.169Z"
+    },
+    {
+      "execution_id": "5f132b07-9b92-4905-a708-76a6e54a8ac0",
+      "run_kind": "replay",
+      "status": "passed",
+      "valid": true,
+      "uploaded": false,
+      "at": "2026-11-17T17:07:31.805Z"
+    },
+    {
+      "execution_id": "ffed4953-0815-4d92-851f-9c0b90760ee6",
+      "run_kind": "replay",
+      "status": "passed",
+      "at": "2026-11-17T17:11:31.786Z",
+      "uploaded": true
+    }
+  ]
+}
