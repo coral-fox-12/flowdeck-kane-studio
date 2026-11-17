@@ -20,7 +20,7 @@ Built with an AI coding agent for the **Kane CLI Online Hackathon** (TestMu AI, 
 - **Suites & export** — group flows into suites; export a suite as `kane-flows.json` (machine-readable) and as `verify.sh` (one `kane-cli run "<objective>" --agent --headless --timeout <n>` line per flow).
 - **Results import** — paste Kane CLI NDJSON (or a single JSON run result); Flowdeck parses `run_end` lines (`status`, `summary`, `credits_consumed`, `test_url`) and step lines into a pass/fail dashboard with status badges, duration, credits and evidence links.
 - **Persistence** — flows, suites and results live in `localStorage`. Nothing leaves your browser. First load seeds 3 sample flows + 1 sample result, all clearly marked `SAMPLE`.
-- **Dark dev-tool UI** — monospace accents, responsive, no build step, no backend, no secrets.
+- **Printed-ledger UI** — warm paper, ink, hairline rules, one vermillion accent; Fraunces + Space Grotesk + IBM Plex Mono, self-hosted in `fonts/` (no external requests). Responsive, no build step, no backend, no secrets.
 
 ## Setup
 
@@ -83,7 +83,7 @@ See [TESTS.md](TESTS.md) for the checklist and what was verified by hand (local 
 | File | What it is |
 |---|---|
 | `index.html` | The whole UI (loads `app.js` + `ui.js`) |
-| `styles.css` | Dark dev-tool theme |
+| `styles.css` | Printed-ledger theme (paper, ink, vermillion accent; self-hosted fonts) |
 | `app.js` | Core logic: draft engine, Kane NDJSON parser, export builders (also used by Node tests) |
 | `ui.js` | Browser UI: CRUD, suites, import, localStorage |
 | `tests/test.js` | Node self-tests (38 assertions) |

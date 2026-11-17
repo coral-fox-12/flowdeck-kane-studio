@@ -11,17 +11,31 @@
 <div class="wrap">
   <header class="top">
     <div>
-      <h1><span class="logo">▦ Flowdeck</span> — Kane Flow Studio</h1>
-      <p class="tagline">Author, organise and export Kane CLI flows — natural-language browser tests, verified by a real agent.</p>
+      <p class="mast-kicker">Kane Flow Studio &middot; a deck of browser tests</p>
+      <div class="masthead">
+        <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <h1>Flowdeck</h1>
+      </div>
+      <p class="tagline">Write a browser test in plain English. <strong>Kane</strong> drives a real browser,
+      records every step, and tells you what broke. Flowdeck keeps the flows, the suites, and the receipts.</p>
     </div>
-    <div class="mono muted" style="font-size:12px">kane-cli · @testmuai/kane-cli<br>no backend · data stays in your browser</div>
+    <div class="mast-side">
+      <ul class="toc">
+        <li><a href="#draft"><span class="n">01</span>Draft</a></li>
+        <li><a href="#flows"><span class="n">02</span>Flows</a></li>
+        <li><a href="#suites"><span class="n">03</span>Suites &amp; export</a></li>
+        <li><a href="#results"><span class="n">04</span>Results</a></li>
+      </ul>
+      <div class="mast-meta">kane-cli &middot; @testmuai/kane-cli<br>no backend &middot; data stays in your browser</div>
+    </div>
   </header>
 
   <section class="panel kane" aria-label="Verify with Kane">
-    <h2 style="margin-top:0;border:none;padding:0">Verify with Kane — the loop</h2>
-    <p><strong>Agent builds → Kane verifies → fix → re-verify.</strong> Every flow in Flowdeck is a plain-English
+    <p class="kicker">00 &mdash; The loop</p>
+    <h2>Verify with Kane &mdash; the loop</h2>
+    <p class="lede"><strong>Agent builds &rarr; Kane verifies &rarr; fix &rarr; re-verify.</strong> Every flow in Flowdeck is a plain-English
     objective that Kane CLI runs in a real browser and returns as pass/fail with a video trace.</p>
-    <ol class="check">
+    <ol class="loop">
       <li>Draft a flow below (or write one by hand).</li>
       <li>Export the suite as <code>verify.sh</code> and run it — or copy one flow's command.</li>
       <li>Paste Kane's NDJSON output into <strong>Results import</strong> and watch the dashboard.</li>
@@ -33,10 +47,11 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
     <p class="muted">The command above is flow #1, live. The full suite is in <code>verify.sh</code> in the repo and exportable from any suite below.</p>
   </section>
 
-  <section aria-label="Draft from description">
-    <h2>✎ Draft from description</h2>
-    <p class="muted">Describe a feature in plain English. A deterministic local pattern engine (no network, no AI call)
-    turns it into 1–3 candidate Kane objectives — each with a verify clause. Edit any draft, then save it as a flow.</p>
+  <section aria-label="Draft from description" id="draft">
+    <p class="kicker">01 &mdash; Draft</p>
+    <h2>Draft from description</h2>
+    <p class="lede">Describe a feature in plain English. A deterministic local pattern engine (no network, no model call)
+    turns it into 1&ndash;3 candidate Kane objectives &mdash; each with a verify clause. Edit any draft, then save it as a flow.</p>
     <label for="draft-desc">Feature description</label>
     <textarea id="draft-desc" placeholder="e.g. user logs in, adds an item to cart, checks out"></textarea>
     <div class="row">
@@ -51,8 +66,9 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
     <div id="draft-list"></div>
   </section>
 
-  <section aria-label="Flows">
-    <h2>Flows <span class="muted" id="flow-count" style="font-size:13px"></span></h2>
+  <section aria-label="Flows" id="flows">
+    <p class="kicker">02 &mdash; The deck</p>
+    <h2>Flows <span id="flow-count"></span></h2>
     <div class="row">
       <div><label for="search">Search flows</label>
       <input type="text" id="search" placeholder="Search name, URL, objective, tag…"></div>
@@ -89,10 +105,11 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
     </div>
   </section>
 
-  <section aria-label="Suites">
+  <section aria-label="Suites" id="suites">
+    <p class="kicker">03 &mdash; Export</p>
     <h2>Suites &amp; export</h2>
-    <p class="muted">Group flows into a suite, then export it as <code>kane-flows.json</code> (for your agent loop)
-    or <code>verify.sh</code> (one <code>kane-cli run … --agent --headless --timeout &lt;n&gt;</code> line per flow).</p>
+    <p class="lede">Group flows into a suite, then export it as <code>kane-flows.json</code> (for your agent loop)
+    or <code>verify.sh</code> (one <code>kane-cli run &hellip; --agent --headless --timeout &lt;n&gt;</code> line per flow).</p>
     <div id="suite-list"></div>
     <div class="panel">
       <label for="suite-name">New suite name</label>
@@ -112,11 +129,12 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
     </div>
   </section>
 
-  <section aria-label="Results">
-    <h2>Results — import Kane CLI output</h2>
-    <p class="muted">Run Kane CLI (see <code>verify.sh</code>), then paste its NDJSON output — or a single JSON run
-    result — here. Flowdeck parses <code>run_end</code> lines (<code>status</code>, <code>summary</code>,
-    <code>credits_consumed</code>, <code>test_url</code>) and step lines into the dashboard below.</p>
+  <section aria-label="Results" id="results">
+    <p class="kicker">04 &mdash; The ledger</p>
+    <h2>Results &mdash; import Kane CLI output</h2>
+    <p class="lede">Run Kane CLI (see <code>verify.sh</code>), then paste its NDJSON output &mdash; or a single JSON run
+    result &mdash; here. Flowdeck parses <code>run_end</code> lines (<code>status</code>, <code>summary</code>,
+    <code>credits_consumed</code>, <code>test_url</code>) and step lines into the ledger below.</p>
     <div class="stats" id="result-stats"></div>
     <label for="import-box">Kane CLI output (NDJSON or JSON)</label>
     <textarea id="import-box" placeholder='{"type":"run_end","status":"passed","summary":"…","credits_consumed":42,"test_url":"https://…","duration_ms":18400}' style="min-height:120px"></textarea>
@@ -132,8 +150,9 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
   </section>
 
   <section aria-label="Data">
+    <p class="kicker">05 &mdash; Housekeeping</p>
     <h2>Your data</h2>
-    <p class="muted">Flows, suites and results live only in this browser's <code>localStorage</code> — nothing is sent
+    <p class="lede">Flows, suites and results live only in this browser's <code>localStorage</code> &mdash; nothing is sent
     anywhere. The 3 flows and 1 result you see on first load are marked <span class="badge sample">SAMPLE</span>.</p>
     <div class="toolbar">
       <button id="reset-samples">Reset to samples</button>
@@ -142,7 +161,7 @@ kane-cli run "On https://flowdeck-kane-studio.surge.sh: open the app and verify 
   </section>
 
   <footer>
-    Flowdeck — Kane Flow Studio · built with an AI coding agent for the Kane CLI Online Hackathon (TestMu AI).
+    Flowdeck &mdash; built for the Kane CLI Online Hackathon (TestMu AI).
     Verify it: <code>bash verify.sh</code> in the repo, or run any flow's command above.
     Source: <a href="https://github.com/coral-fox-12/flowdeck-kane-studio">github.com/coral-fox-12/flowdeck-kane-studio</a>
   </footer>
