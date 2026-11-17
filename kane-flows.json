@@ -1,0 +1,37 @@
+{
+  "format": "flowdeck/kane-flows@1",
+  "suite": "Default suite",
+  "exported_at": "2026-11-17T02:54:11.859Z",
+  "flows": [
+    {
+      "name": "Flowdeck loads and shows seeded flows",
+      "url": "https://flowdeck-kane-studio.surge.sh",
+      "objective": "On https://flowdeck-kane-studio.surge.sh: open the app and verify the header \"Flowdeck\" is visible, the flow list shows the 3 sample flows, and the results dashboard shows the sample result. Verify that no JavaScript error appears and every button on the page does what it says.",
+      "tags": [
+        "smoke",
+        "sample"
+      ],
+      "timeout": 120
+    },
+    {
+      "name": "Draft from description generates login objectives",
+      "url": "https://flowdeck-kane-studio.surge.sh",
+      "objective": "On https://flowdeck-kane-studio.surge.sh: type \"user logs in with valid credentials and sees the dashboard\" into the Draft from description box and click Generate drafts. Verify that at least one candidate objective appears, it mentions login and a verify clause, and saving it adds a new flow to the flow list.",
+      "tags": [
+        "draft",
+        "sample"
+      ],
+      "timeout": 120
+    },
+    {
+      "name": "Export suite downloads kane-flows.json and verify.sh",
+      "url": "https://flowdeck-kane-studio.surge.sh",
+      "objective": "On https://flowdeck-kane-studio.surge.sh: open the Default suite and click Export kane-flows.json and Export verify.sh. Verify that both files download, the JSON lists the sample flows, and the shell script contains one kane-cli run line per flow with --agent --headless --timeout 120.",
+      "tags": [
+        "export",
+        "sample"
+      ],
+      "timeout": 120
+    }
+  ]
+}
